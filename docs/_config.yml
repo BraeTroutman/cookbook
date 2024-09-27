@@ -29,7 +29,9 @@ github_username:  braetroutman
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+  - jekyll-cooklang-converter
+whitelist:
+  - jekyll-cooklang-converter
 
 collections:
   recipes:
