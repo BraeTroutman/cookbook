@@ -5,10 +5,18 @@
 layout: home
 ---
 
-## Recipes
+## Recipes by Category
+
+{% assign categories = site.recipes | map: "categories" | join: "," | split: "," | uniq %}
+{% for cat in categories %}
+### {{ cat | capitalize }}
 
 {% for recipe in site.recipes %}
-### [{{ recipe.title }}]({{ recipe.url | prepend: site.baseurl }})
+{% if recipe.categories contains cat %}
+- [{{ recipe.title }}]({{ recipe.url | prepend: site.baseurl }})
+{% endif %}
+{% endfor %}
+
 {% endfor %}
 
 ## Notes
