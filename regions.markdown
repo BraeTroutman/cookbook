@@ -6,6 +6,7 @@ permalink: /regions/
 
 {% assign regions = site.recipes | map: "region" | join: "," | split: "," | uniq %}
 {% for region in regions %}
+{% if region != "" %}
 ## {{ region }}
 
 {% for recipe in site.recipes %}
@@ -14,4 +15,5 @@ permalink: /regions/
 {% endif %}
 {% endfor %}
 
+{% endif %}
 {% endfor %}
