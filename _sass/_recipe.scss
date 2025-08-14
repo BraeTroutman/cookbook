@@ -1,0 +1,180 @@
+// Recipe Layout Styles
+
+$theme-color: teal;
+$accent-color: darken($theme-color, 10%);
+
+@mixin chip() {
+  background-color: $accent-color;
+  border: none;
+  cursor: default;
+  outline: none;
+  padding: 0.25rem 0.75rem;
+  font-size: 14px;
+  font-color: #333333;
+  font-family:"Open Sans", sans-serif;
+  white-space: nowrap;
+  border-radius: 16px;
+  vertical-align: middle;
+  flex-basis: content;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.recipe-category {
+  @include chip;
+}
+
+.region-name {
+  @include chip;
+}
+
+.recipe-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-header {
+  background: $theme-color;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 4px solid $accent-color;
+}
+
+.recipe-title {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.recipe-subtitle {
+  font-style: italic;
+  font-size: 1.1em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.recipe-content {
+  padding: 40px;
+}
+
+.recipe-intro {
+  font-style: italic;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #faf8f4;
+  border-left: 4px solid #d4a574;
+  border-radius: 4px;
+}
+
+.recipe-section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #6b5a42;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e6dcc9;
+}
+
+.ingredient-list, .steps-list {
+  padding-left: 0;
+}
+
+.ingredient-list li {
+  list-style: none;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.ingredient-list li:before {
+  content: "•";
+  color: $theme-color;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.steps-list {
+  counter-reset: step-counter;
+}
+
+.steps-list li {
+  list-style: none;
+  margin-bottom: 15px;
+  padding-left: 35px;
+  position: relative;
+  counter-increment: step-counter;
+}
+
+.steps-list li:before {
+  content: counter(step-counter);
+  background: $theme-color;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.recipe-notes {
+  background: #f0ede6;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #d4a574;
+  margin-top: 30px;
+}
+
+.recipe-notes h3 {
+  margin-top: 0;
+  color: #6b5a42;
+  font-size: 1.2em;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #faf8f4;
+  border-radius: 6px;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #6b5a42;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 1.1em;
+  margin-top: 4px;
+}
+
+.decorative-border {
+  height: 3px;
+  background: linear-gradient(to right, #8b7355, #d4a574, #8b7355);
+  margin: 25px 0;
+}
