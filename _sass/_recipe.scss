@@ -84,7 +84,7 @@ $accent-color: darken($theme-color, 10%);
   border-bottom: 2px solid #e6dcc9;
 }
 
-.ingredient-list, .steps-list {
+.ingredient-list, .steps-list, .cookware-list {
   padding-left: 0;
 }
 
@@ -96,6 +96,22 @@ $accent-color: darken($theme-color, 10%);
 }
 
 .ingredient-list li:before {
+  content: "•";
+  color: $theme-color;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+.cookware-list li {
+  list-style: none;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.cookware-list li:before {
   content: "•";
   color: $theme-color;
   font-weight: bold;
